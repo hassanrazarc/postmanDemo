@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "d979b0cb-795f-4f1a-87ba-3de23f3eae1a",
+		"name": "testCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DB tests",
+			"item": [
+				{
+					"name": "FindBy User ID",
+					"id": "e2514dae-b3e8-486d-9a39-6bd9720d850f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "3edb8811-511f-4775-bdf9-40471e995098"
+		},
+		{
+			"name": "List All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc61b200-69f9-46f0-a1e2-5768fd803196",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    console.log(\"List user API function code test\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "e4a16e74-cf52-4ab7-91e8-e19731259842",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/user"
+			},
+			"response": []
+		},
+		{
+			"name": "Find User by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8a311b7-9636-44c5-a537-9971831cb74d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    console.log(\"FindBy ID user API function code test\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "1dcfafd5-6c5a-4f4b-93c5-8704a6dedf7f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/user/1"
+			},
+			"response": []
+		}
+	]
+}
